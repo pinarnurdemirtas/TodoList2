@@ -1,0 +1,106 @@
+$primary-color: #4c68af;
+$accent-color: #3e0101; 
+$delete-color: #d21616;  
+$border-radius: 12px;    
+$box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+$background-color: #f0f4f8; 
+
+.todo-app {
+  max-width: 900px; 
+  margin: 40px auto;
+  padding: 30px;
+  background: $background-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: $primary-color; 
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px; 
+
+    input[type="text"] {
+      flex: 1;
+      padding: 15px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $accent-color;
+      }
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      background: #ffffff;
+      border-bottom: 2px solid #eee;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      
+      &:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      &.completed span {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+
+      button {
+        background-color: $delete-color;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($delete-color, 10%);
+        }
+      }
+
+      span {
+        flex: 1;
+        margin-right: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: color 0.3s ease;
+
+      }
+    }
+  }
+}
